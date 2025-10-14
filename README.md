@@ -7,8 +7,8 @@ NginxベースのシンプルなWebアプリケーションのECSデプロイデ
 
 ### Dockerイメージのビルドとプッシュ
 ```bash
-# イメージをビルド
-docker build -t ecs-demo-image .
+# イメージをビルド（x86向け）
+docker build --platform linux/amd64 -t ecs-demo-image .
 
 # ECRにタグ付け
 docker tag ecs-demo-image:latest <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/ecs-demo-image:latest
