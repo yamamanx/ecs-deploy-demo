@@ -1,0 +1,29 @@
+{
+  "serviceName": "sample-website",
+  "cluster": "demo",
+  "taskDefinition": "ecs-demo-task",
+  "desiredCount": 2,
+  "launchType": "FARGATE",
+  "deploymentController": {
+    "type": "CODE_DEPLOY"
+  },
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "subnet-xxxxxxxxx",
+        "subnet-yyyyyyyyy"
+      ],
+      "securityGroups": [
+        "sg-xxxxxxxxx"
+      ],
+      "assignPublicIp": "DISABLED"
+    }
+  },
+  "loadBalancers": [
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:region:account:targetgroup/target-group-name/xxxxxxxxx",
+      "containerName": "sample-website",
+      "containerPort": 80
+    }
+  ]
+}
