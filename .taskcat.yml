@@ -1,0 +1,11 @@
+project:
+  name: ecs-deploy-demo
+  regions:
+    - us-east-1
+  auth:
+    us-east-1: yamamugi-yamashita
+  package_lambda: false
+tests:
+  default:
+    template: infrastructure.yaml
+    parameters: {}
